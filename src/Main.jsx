@@ -3,6 +3,7 @@ import { addTodo, removeTodo,removeAllTodo } from "./redux-state/todoSlice";
 import Button from '@mui/material/Button';
 import { Box } from "@mui/system";
 
+
 const Main = () => {
 
   const todos  = useSelector( state=>state.todo.todos)
@@ -31,7 +32,10 @@ const Main = () => {
     <ul>
       {todos.map(item => <li key={item } > {item } </li>)} 
     </ul>
+
+    
   </Box>
+
    );
 }
  
