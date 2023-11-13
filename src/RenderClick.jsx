@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useState } from "react";
+
 
 
 const products = [
@@ -8,20 +10,38 @@ const products = [
 ];
 const RenderClick = () => {
 
-  const [click, setClick] = useState(false)
 
-  const product  =  products.map(element=><div 
-    key={element.id} 
-    style={{color:element.isFruit
-      ? 'black'
-      : 'red'
-    }}
-    > {element.title} </div>  )
+  const [click, setClick] = useState(false)
+  const [ one , setOne] = useState(null)
+
+  
+  const fetchFake =  () =>{
+    const resp =  fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(json=> setOne(json))
+      
+  } 
+
+ console.log(one);
+ 
+  useEffect(()=>{
+    fetchFake()
+  },[])
+
+   
+   
+  
  
 
   return (  
     <>
-    {click && product }
+    {click && one && one.map(element=><div 
+        key={element.id} 
+        style={{color:element>20
+          ? 'black'
+          : 'red'
+        }}
+        > {element.title} </div>)}
 
     
     <button  onClick={()=>setClick(!click)} > click me </button>

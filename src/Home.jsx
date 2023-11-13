@@ -22,7 +22,7 @@ const dispatch = useDispatch()
     <Button variant='contained'  sx={{mr:3, ml:3,}}  onClick={()=> dispatch(increment())} > Increment</Button>
     {count}
     <Button variant='contained' sx={{ml:2}} onClick={()=> dispatch(decrement())} > Decrement</Button>
-    <RenderClick/>
+    <RenderClick  />
     
 
   </Box>
