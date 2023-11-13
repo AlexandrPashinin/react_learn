@@ -22,7 +22,7 @@ const RenderClick = () => {
       
   } 
 
- console.log(one);
+
  
   useEffect(()=>{
     fetchFake()
